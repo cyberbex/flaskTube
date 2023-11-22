@@ -7,5 +7,7 @@ from app import app
 @app.route('/index')
 
 def index():
-    return render_template('index.html')
+    nome = 'bruno'
+    dados= { "Nome":"bruno", "Telefone":34534345,"Email":"cyberbex@gmail" }
+    return render_template('index.html', nome = nome, dados=dados)
 
