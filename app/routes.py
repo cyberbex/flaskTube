@@ -4,11 +4,13 @@ from app import app
 
 
 @app.route('/')
-@app.route('/index')
+@app.route('/',defaults={"nome":"usuario","telefone":"4565464","email":"gamba@ds.com"})
+@app.route('/index',defaults={"nome":"usuario","telefone":"4565464","email":"gamba@ds.com"})
+@app.route('/index/<nome>/<telefone>/<email>')
 
-def index():
-    nome = 'bruno'
-    dados= { "Nome":"bruno", "Telefone":34534345,"Email":"cyberbex@gmail" }
+def index(nome,telefone,email):
+    
+    dados= { "Nome":"bruno", "Telefone":telefone,"Email":email }
     return render_template('index.html', nome = nome, dados=dados)
 
 @app.route('/contato')
