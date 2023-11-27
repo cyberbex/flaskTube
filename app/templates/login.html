@@ -1,10 +1,20 @@
 {% extends "base.html" %}
 
 {% block conteudo %}
-    <form action="/autenticar">
+    <form action="/autenticar" method="post">
         Usuario: <input type="text" name="usuario"><br/>
         Senha: <input type="text" name="senha"><br/>
+        <br>
+        <br>
+        <select name="simbolos">
+            <option value="BTCUSDT">BTC</option>
+            <option value="AVAXUSDT">AVAX</option>
+            <option value="MATICUSDT">MATIC</option>
+            <option value="ATOMUSDT">ATOM</option>
+        </select>
+        
         <button type="submit"> Entrar</button>
-    </form>        
+    </form>
+            
 {% endblock  %}
 

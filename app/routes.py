@@ -21,8 +21,9 @@ def contato():
 def login():
     return render_template('login.html')
 
-@app.route('/autenticar', methods=['GET'])
+@app.route('/autenticar', methods=['POST'])
 def autenticar():
-    usuario = request.args.get('usuario')
-    senha = request.args.get('senha')
-    return "usuarios: {} e senha: {}".format(usuario,senha)
+    usuario = request.form.get('usuario')
+    senha = request.form.get('senha')
+    simbolo = request.form.get('simbolos')
+    return "usuarios: {} e senha: {} e simbolo:{}".format(usuario,senha,simbolo)
